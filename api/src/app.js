@@ -4,9 +4,15 @@ const router = express.Router();
 
 //Rotas
 const index = require('./routes/index');
-const personRoute = require('./routes/bugRoute');
+const bugsRoute = require('./routes/bugRoute');
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.use('/', index);
-app.use('/bug', personRoute);
+app.use('/api/bugs', bugsRoute);
 
 module.exports = app;
