@@ -3,7 +3,7 @@ const { CosmosClient } = require("@azure/cosmos");
 const config = require("../config");
 
 const endpoint = config.db.url;
-const key = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+const key = config.db.apikey;
 const client = new CosmosClient({ endpoint, key });
 
 async function handleError(error) {
