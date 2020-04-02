@@ -3,13 +3,16 @@ import axios from 'axios';
 
 import  BugsListItem  from './BugsListItem'
 
+const config = require("../../config");
+
 export default class BugsList extends React.Component {
   state = {
     bugs: []
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3010/api/bugs`)
+    
+    axios.get(config.api.url + `/api/bugs`)
       .then(res => {
         const bugs = res.data;
         this.setState({ bugs });

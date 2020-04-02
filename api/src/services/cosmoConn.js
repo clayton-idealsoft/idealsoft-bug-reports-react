@@ -1,7 +1,8 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const { CosmosClient } = require("@azure/cosmos");
+const config = require("../config");
 
-const endpoint = "https://localhost:8081";
+const endpoint = config.db.url;
 const key = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
 const client = new CosmosClient({ endpoint, key });
 
