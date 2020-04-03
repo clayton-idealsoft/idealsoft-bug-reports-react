@@ -5,7 +5,7 @@ export default class BugsListItem extends React.Component {
         return (
             <tr>
                 <td>{this.props.item.bugid}</td>
-                <td>{this.props.item.titulo}</td>
+                <td>{this.props.item.titulo}</td> 
                 <td>{this.props.item.data}</td>
                 <td>{this.props.item.codigoUsuario} - {this.props.item.nomeUsuario}</td>
             </tr>
